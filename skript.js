@@ -1,7 +1,7 @@
 const guests = ['Диана', 'Ксюша', 'Лера'];
 
 function randomSeat() {
-    const shuffledGuests = structuredClone(guests).sort(() => Math.random() - 0.5);
+    const shuffledGuests = guests.toSorted(() => Math.random() - 0.5);
     
     for (let i = 0; i < 3; i++) {
         const seatElement = document.getElementById(`seat${i + 1}`);
