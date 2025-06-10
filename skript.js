@@ -1,11 +1,11 @@
 const guests = ['Диана', 'Ксюша', 'Лера'];
 
 function randomSeat() {
-    guests.sort(() => Math.random() - 0.5);
+    const shuffledGuests = structuredClone(guests).sort(() => Math.random() - 0.5);
     
     for (let i = 0; i < 3; i++) {
         const seatElement = document.getElementById(`seat${i + 1}`);
-        seatElement.textContent = guests[i];
+        seatElement.textContent = shuffledGuests[i] || '-';
         seatElement.style.backgroundColor = getRandomLightColor();
     }
 }
